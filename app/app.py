@@ -3,6 +3,8 @@ import requests
 import pandas as pd
 import os
 import plotly.figure_factory as ff
+from streamlit_option_menu import option_menu
+
 # import pyecharts.options as opts
 # from pyecharts.charts import Line
 # from streamlit_option_menu import option_menu
@@ -258,19 +260,19 @@ import plotly.figure_factory as ff
 #     height=600,
 # )
 st.set_page_config(
-    page_title="mi-person", # => Quick reference - Streamlit
-    page_icon="",
+    page_title="Study and Research Tool", # => Quick reference - Streamlit
+    page_icon=":earth_africa:",
     layout="centered", # wide
     initial_sidebar_state="auto") # auto - prefixed bar
 
 with st.sidebar:
     selected = option_menu(
-        menu_title= None,
-        options=['mi-person', 'mi-project','mi-analysis', 'mi-crew'],
-        icons = ['house', 'megaphone', 'magic', 'people'],
+        menu_title= "Fertility",
+        options=['Fertility and Schooling', 'Graphs'],
+        icons = ['people', 'globe'],
         styles={
-        "container": {"padding": "0!important", "background-color": "#fafafa"},
-        "icon": {"color": "rgba(255, 0, 0, 0.858)", "font-size": "15px"},
+        "container": {"padding": "0!important", "background-color": "#090126"},
+        "icon": {"color": "#fafafa", "font-size": "15px"},
         "nav-link": {"font-size": "20px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
         "nav-link-selected": {"background-color": "rgba(89, 179, 103, 0.571)"}}
     )
