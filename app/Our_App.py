@@ -286,7 +286,7 @@ with st.sidebar:
         "nav-link-selected": {"background-color": "rgba(89, 179, 103, 0.571)"}}
     )
 
-user_colour = st.color_picker(label='Choose a colour for your plot')
+#user_colour = st.color_picker(label='Choose a colour for your plot')
 
 if selected == 'All countries':
          res = requests.get(api_all)
