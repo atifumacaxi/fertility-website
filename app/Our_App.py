@@ -289,7 +289,7 @@ with st.sidebar:
     selected2 = option_menu(
         menu_title= "Schooling",
         options=['Afghanistan', 'Brazil', 'Japan', 'Yemen', 'Niger', 'Uganda', 'Mali', 'Senegal', 'Cameroon', 'All countries'],
-        #icons = [':flag-af:', ':flag-af:'],
+        icons = ['people', ':flag-af:'],
         styles={
         "container": {"padding": "0!important", "background-color": "#090126"},
         "icon": {"color": "#fafafa", "font-size": "15px"},
