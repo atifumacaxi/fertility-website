@@ -288,6 +288,8 @@ with st.sidebar:
 
 #user_colour = st.color_picker(label='Choose a colour for your plot')
 
+st.title('Le Wagon - Fertility Rate World')
+
 if selected == 'All countries':
          res = requests.get(api_all)
         #  st.write(res)
