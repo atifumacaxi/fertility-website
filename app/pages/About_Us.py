@@ -7,6 +7,6 @@ import streamlit as st
 
 
 
-st.title('Welcome to our research page :smile:')
+st.title(':sparkles: Welcome to our Prediction tool :sparkles:')
 st.subheader('What is our purpose? :thinking_face:')
 st.write('''We want to give you a place where you can research and imagine some predictions about important world rates, like Fertility and Schooling rate, and then you can think about population trends.''')
