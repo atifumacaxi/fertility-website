@@ -6,7 +6,7 @@ import streamlit as st
 # from PIL import Image
 
 
-def app():
-    st.title('Home Page')
-    st.subheader('This is my home page')
-    st.write('text for my home page')
+
+st.title('Welcome to our research page :smile:')
+st.subheader('What is our purpose? :thinking_face:')
+st.write('''We want to give you a place where you can research and imagine some predictions about important world rates, like Fertility and Schooling rate, and then you can think about population trends.''')
