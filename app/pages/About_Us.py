@@ -15,4 +15,4 @@ st.write('Here we can give you some ideas of why it’s important to read about 
 st.write('They give us notion about the population dynamic')
 st.write('Very important in family planning')
 st.write(':deciduous_tree: Open mind about sustainable development :recycle: ')
-st.write(':rainbow:Let us thinking about gender equality :rainbow:')
+st.write(':rainbow: Let us thinking about gender equality :rainbow:')
