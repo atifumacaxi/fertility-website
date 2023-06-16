@@ -276,7 +276,18 @@ st.set_page_config(
 
 with st.sidebar:
     selected = option_menu(
-        menu_title= "Fertility Rate per country",
+        menu_title= "Fertility",
+        options=['Afghanistan', 'Brazil', 'Japan', 'Yemen', 'Niger', 'Uganda', 'Mali', 'Senegal', 'Cameroon', 'All countries'],
+        #icons = ['people', 'globe'],
+        styles={
+        "container": {"padding": "0!important", "background-color": "#090126"},
+        "icon": {"color": "#fafafa", "font-size": "15px"},
+        "nav-link": {"font-size": "20px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
+        "nav-link-selected": {"background-color": "rgba(89, 179, 103, 0.571)"}}
+    )
+
+    selected2 = option_menu(
+        menu_title= "Schooling",
         options=['Afghanistan', 'Brazil', 'Japan', 'Yemen', 'Niger', 'Uganda', 'Mali', 'Senegal', 'Cameroon', 'All countries'],
         #icons = ['people', 'globe'],
         styles={
