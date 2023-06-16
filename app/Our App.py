@@ -2,8 +2,10 @@ import streamlit as st
 import requests
 import pandas as pd
 import os
-import plotly.figure_factory as ff
+import plotly.express as px
 from streamlit_option_menu import option_menu
+import matplotlib.pyplot as plt
+
 
 # import pyecharts.options as opts
 # from pyecharts.charts import Line
@@ -16,9 +18,11 @@ from streamlit_option_menu import option_menu
 #     initial_sidebar_state="auto") # auto - prefixed bar
 
 # st.subheader('Predicting the fertility rate country for the next 4 years')
-# api_past = 'http://localhost:8000/past'
-# api_pred = 'http://localhost:8000/predict'
-# api_all = 'http://localhost:8000/all'
+api_past = 'https://fertility-djqdzjunta-ew.a.run.app/past'
+api_pred = 'https://fertility-djqdzjunta-ew.a.run.app/predict'
+api_all = 'https://fertility-djqdzjunta-ew.a.run.app/all'
+
+
 # with st.form(key='main_form', clear_on_submit=True):
 #     c = st.selectbox('Select country', ['Select country', 'Afghanistan', 'Brazil', 'Japan', 'Yemen', 'All countries'])
 #     submit = st.form_submit_button('Lock & Load !')
@@ -259,16 +263,22 @@ from streamlit_option_menu import option_menu
 #     """,
 #     height=600,
 # )
+
+
+# api_past = 'http://127.0.0.1:8000/past'
+# api_pred = 'http://127.0.0.1:8000/predict'
+# api_all = 'http://127.0.0.1:8000/all'
+
 st.set_page_config(
-    page_title="Study and Research Tool", # => Quick reference - Streamlit
+    page_title="Fertility Rate Research Tool", # => Quick reference - Streamlit
     page_icon=":earth_africa:",
     layout="centered", # wide
     initial_sidebar_state="auto") # auto - prefixed bar
 
 with st.sidebar:
     selected = option_menu(
-        menu_title= "Fertility",
-        options=['Fertility and Schooling', 'Graphs'],
+        menu_title= "Fertility Rate per country",
+        options=['Afghanistan', 'Brazil', 'Japan', 'Yemen', 'Niger', 'Uganda', 'Mali', 'Senegal', 'Cameroon', 'All countries'],
         icons = ['people', 'globe'],
         styles={
         "container": {"padding": "0!important", "background-color": "#090126"},
@@ -276,3 +286,24 @@ with st.sidebar:
         "nav-link": {"font-size": "20px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
         "nav-link-selected": {"background-color": "rgba(89, 179, 103, 0.571)"}}
     )
+
+user_colour = st.color_picker(label='Choose a colour for your plot')
+
+if selected == 'All countries':
+         res = requests.get(api_all)
+        #  st.write(res)
+         df = pd.DataFrame(res.json())
+         st.line_chart(df, use_container_width=True)
+else:
+        response = requests.get(api_past, params={'country': selected})
+        df_past = response.json()
+        resp = requests.get(api_pred, params={'country': selected})
+        df_pred = resp.json()
+        df_past = pd.DataFrame(df_past)
+        df_pred = pd.DataFrame(df_pred)
+        df_plot = [df_past, df_pred]
+        result = pd.concat(df_plot, axis=0)
+        #fig = px.scatter(result, name='95% CI Upper')
+        #fig2 = px.
+        #st.plotly_chart(fig)
+        st.line_chart(result, use_container_width=True)
