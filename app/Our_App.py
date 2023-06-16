@@ -289,7 +289,7 @@ with st.sidebar:
     selected2 = option_menu(
         menu_title= "Schooling",
         options=['Afghanistan', 'Brazil', 'Japan', 'Yemen', 'Niger', 'Uganda', 'Mali', 'Senegal', 'Cameroon', 'All countries'],
-        icons = ['people', ':flag-af:'],
+        #icons = ['people', ':flag-af:'],
         styles={
         "container": {"padding": "0!important", "background-color": "#090126"},
         "icon": {"color": "#fafafa", "font-size": "15px"},
@@ -300,7 +300,7 @@ with st.sidebar:
 #user_colour = st.color_picker(label='Choose a colour for your plot')
 
 #st.markdown("<h1 style='text-align: center; color: red;'>Some title</h1>", unsafe_allow_html=True)
-st.title('Le Wagon - Fertility Rate World')
+st.subtitle('Fertility Rate - Le Wagon')
 
 if selected == 'All countries':
          res = requests.get(api_all)
@@ -321,5 +321,5 @@ else:
         #st.plotly_chart(fig)
         st.line_chart(result, use_container_width=True)
 
-if selected2 == 'All countries':
-        st.write('We are working on it ')
+# if selected2 == 'All countries':
+#         st.write('We are working on it ')
