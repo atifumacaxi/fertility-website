@@ -300,7 +300,7 @@ with st.sidebar:
 #user_colour = st.color_picker(label='Choose a colour for your plot')
 
 #st.markdown("<h1 style='text-align: center; color: red;'>Some title</h1>", unsafe_allow_html=True)
-st.subtitle('Fertility Rate - Le Wagon')
+st.subheader('Fertility Rate - Le Wagon')
 
 if selected == 'All countries':
          res = requests.get(api_all)
