@@ -278,7 +278,7 @@ with st.sidebar:
     selected = option_menu(
         menu_title= "Fertility Rate per country",
         options=['Afghanistan', 'Brazil', 'Japan', 'Yemen', 'Niger', 'Uganda', 'Mali', 'Senegal', 'Cameroon', 'All countries'],
-        icons = ['people', 'globe'],
+        #icons = ['people', 'globe'],
         styles={
         "container": {"padding": "0!important", "background-color": "#090126"},
         "icon": {"color": "#fafafa", "font-size": "15px"},
