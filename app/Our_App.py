@@ -289,7 +289,7 @@ with st.sidebar:
     selected2 = option_menu(
         menu_title= "Schooling",
         options=['Afghanistan', 'Brazil', 'Japan', 'Yemen', 'Niger', 'Uganda', 'Mali', 'Senegal', 'Cameroon', 'All countries'],
-        #icons = ['people', 'globe'],
+        icons = [':flag-af:', ':flag-af:'],
         styles={
         "container": {"padding": "0!important", "background-color": "#090126"},
         "icon": {"color": "#fafafa", "font-size": "15px"},
@@ -320,3 +320,6 @@ else:
         #fig2 = px.
         #st.plotly_chart(fig)
         st.line_chart(result, use_container_width=True)
+
+if selected2:
+        st.title('We are working on it ')
